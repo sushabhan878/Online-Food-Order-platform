@@ -1,12 +1,34 @@
 import './App.css'
-import { Button } from './components/ui/button'
-
+import Login from './auth/login'
+import Signup from './auth/Signup'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import MainLayout from './components/MainLayout'
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    // children: [
+    //   {
+    //     path:"/login"
+    //   }
+    // ]
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/signup",
+    element: <Signup/>
+  }
+])
 function App() {
 
   return (
-    <>
-      <Button className='button'>Lets build out food ordring website using TS</Button>
-    </>
+    <main>
+      <RouterProvider router={appRouter}>
+      </RouterProvider>
+    </main>
   )
 }
 
