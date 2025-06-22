@@ -43,7 +43,7 @@ const Login = () => {
           <LockKeyhole className="absolute inset-y-2 left-2 text-gray-500 pointer-events-none" />
           {errors && <span className="text-xs text-red-400">{ errors.password }</span>}
               </div>
-              <div className="mb-6">
+              <div className="mb-2">
                   {isLoading ? (
                 <Button disabled className="button w-full">
                       Loging In <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
@@ -52,7 +52,12 @@ const Login = () => {
                     <Button type="submit" className="button w-full">
                       Login
                   </Button>
-                  )}  
+          )}  
+              </div>
+              <div className="mb-4">
+                  <Link to="/forgot-password" className="text-blue-400">
+                    Forgot Password
+                  </Link>
               </div>
               <Separator />
               <p className="mt-2">Dont have an Account?{" "}
