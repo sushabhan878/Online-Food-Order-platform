@@ -1,34 +1,18 @@
 import './App.css'
-import Login from './auth/login'
+import Login from './auth/Login'
 import Signup from './auth/Signup'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import MainLayout from './components/MainLayout'
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout />,
-    // children: [
-    //   {
-    //     path:"/login"
-    //   }
-    // ]
-  },
-  {
-    path: "/login",
-    element: <Login/>
-  },
-  {
-    path: "/signup",
-    element: <Signup/>
-  }
-])
 function App() {
 
   return (
-    <main>
-      <RouterProvider router={appRouter}>
-      </RouterProvider>
-    </main>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainLayout/>}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 
